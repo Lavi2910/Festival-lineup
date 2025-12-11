@@ -56,7 +56,10 @@ export default function App() {
 
       <main>
         <div className="shows-grid">
-        {/* TODO - shows.map((show)=>{ return <ShowCard id={show.id} .../> })*/}
+        {shows.map((show)=> {
+          return <ShowCard id={show.id} artist={show.artist} day={show.day}
+          hour={show.hour} image={show.image} stage={show.stage} ticketsLeft={show.ticketsLeft} />
+        })}
         </div>
       </main>
     </div>
