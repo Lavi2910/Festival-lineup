@@ -38,7 +38,7 @@ export default function ShowCard({
   let interestString = isInterested 
   ? "this show is in your interested list 🎟️" 
   : "You haven't added this show yet";
-  
+
   return (
     <article className="show-card">
       <div className="show-image-wrapper">
