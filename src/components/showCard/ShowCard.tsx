@@ -1,4 +1,5 @@
 import { useState } from "react";
+const outOfTickets = 0,lastTickets = 0;
 
 export interface ShowCardProps {
   artist: string;
@@ -26,19 +27,18 @@ export default function ShowCard({
 
   let ticketsStatusText;
 
-  if (ticketsLeft <= 0) {
+  if (ticketsLeft <= outOfTickets) {
     ticketsStatusText = "SOLD OUT";
-  } else if (ticketsLeft <= 30) {
+  } else if (ticketsLeft <= lastTickets) {
     ticketsStatusText = "Last tickets – hurry up!";
   } else {
     ticketsStatusText = "Tickets available";
   }
 
-  let interestString;
-  if(isInterested)
-    interestString = "this show is in your interested list 🎟️"
-  else interestString = "You haven't added this show yet"
-
+  let interestString = isInterested 
+  ? "this show is in your interested list 🎟️" 
+  : "You haven't added this show yet";
+  
   return (
     <article className="show-card">
       <div className="show-image-wrapper">
